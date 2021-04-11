@@ -11,5 +11,36 @@
     padding: 10px;
 }
 .caja:nth-child(1) h1{
-    background: rgb(39, 145, 197);
+    background: rgb(45, 169, 231);
+    text-align: center;
+    color: white;
 }
+.caja:nth-child(2) h1{
+    background: rgb(45, 169, 231);
+    text-align: center;
+    color: white;
+}
+.caja:nth-child(3) h1{
+    background: rgb(45, 169, 231);
+    text-align: center;
+    color: white;
+}
+.caja:nth-child(1) p{
+   background-image: url(https://vignette.wikia.nocookie.net/central/images/1/10/Donde-ver-futbol-temporada-2017-2018.jpg/revision/latest?cb=20170925224041);
+   background-size: cover;
+   color: white;
+   
+}
+.caja:nth-child(2) p{
+            background-image: url(https://cdn.shopify.com/s/files/1/0249/4808/0685/files/mtb20_coleccion_mujer_800.jpg?v=1602469898);
+            background-size: cover;
+            color: white;
+            
+         }
+           
+ .caja:nth-child(3) p{
+    background-image: url(https://www.snowmada.com/wp-content/uploads/2018/12/ski-noche-saalbach-hinterglemm-salzburgo-austria.jpg);
+    background-size: cover;
+    color: white;
+    
+ }
