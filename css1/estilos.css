@@ -12,6 +12,18 @@ img {
     border-radius: 8px;
 }
 
+h4
+{
+    text-align: center;
+}
 
-
+span {
+    font-family:serif;
+    text-align: center;
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    margin: 6px;
+    background-color: rgb(247, 247, 211);
+  }
 
