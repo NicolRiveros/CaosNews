@@ -44,3 +44,43 @@
     color: white;
     
  }
+
+
+ .caja2{
+    display: table-cell;
+    padding: 10px;
+}
+.caja2:nth-child(1) h1{
+    background: rgb(45, 169, 231);
+    text-align: center;
+    color: white;
+}
+.caja2:nth-child(2) h1{
+    background: rgb(45, 169, 231);
+    text-align: center;
+    color: white;
+}
+.caja2:nth-child(3) h1{
+    background: rgb(45, 169, 231);
+    text-align: center;
+    color: white;
+}
+.caja2:nth-child(1) p{
+   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL6XugqG_9GzFphiW_bLL9Vgxce8s2kgeQBA&usqp=CAU);
+   background-size: cover;
+   color: white;
+   
+}
+.caja2:nth-child(2) p{
+            background-image: url(https://media.biobiochile.cl/wp-content/uploads/2021/04/faa1.png);
+            background-size: cover;
+            color: white;
+            
+         }
+           
+ .caja2:nth-child(3) p{
+    background-image: url(https://www.snowmada.com/wp-content/uploads/2018/12/ski-noche-saalbach-hinterglemm-salzburgo-austria.jpg);
+    background-size: cover;
+    color: white;
+    
+ }
