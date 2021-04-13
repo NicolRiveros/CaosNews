@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <title>Noticias Caos News</title>
+  <link type="text/css" rel="stylesheet" href="css1/estilos.css">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -44,9 +47,188 @@
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
             </form> 
 
-            <button type="button" class="btn btn-light">Iniciar sesión</button>
+            <a href="InicioSesion.html"><button type="button" class="btn btn-light">Iniciar sesión</button></a>
         </div>
     </nav>
+
+    <div class="container mt-3">
+
+        <h2>Carousel</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        
+          <!-- Indicadores -->
+          <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ul>
+          
+          <!-- Imagenes -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="GreysAnatomy.html">
+                    <img src="imagen/greys.jpg" alt="Greys Anatomy" width="1100" height="500">
+                </a>
+                <div class="carousel-caption">
+                  <h3>Grey's Anatomy</h3>
+                  <p>Serie</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+              <a href="futbol.html">
+                <img src="Img/real.jpg" alt="Grammy" width="1100" height="500">
+              </a>
+              <div class="carousel-caption">
+                <h3>Champions League</h3>
+                <p>Futbol</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <a href="Peliculas.html">
+                <img src="imagen/EntradaPelicula.png" alt="Marvel y Terror" width="1100" height="500">
+              </a>
+              <div class="carousel-caption">
+                <h3>Terror y Ciencia Ficción</h3>
+                <p>Cine</p>
+              </div>   
+            </div>
+            <div class="carousel-item">
+                <a href="corona.html">
+                  <img src="Img/redes1.jpg" alt="Grammy" width="1100" height="500">
+                </a>
+                <div class="carousel-caption">
+                  <h3>Falsa Información</h3>
+                  <p>Redes Sociales</p>
+                </div>
+            </div>
+        </div>
+          
+          <!-- Controles derecha e izquierda -->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+        
+    </div>
+    <p> </p>
+    <h1 class="centrado"> Noticias </h1>
+    <p> </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="GreysAnatomy.html">
+                    <h3>Serie: Grey's Anatomy</h3>
+                    <img src="imagen/GreysAnatomySe.jpg" class="rounded" width="90%">
+                </a>
+                <p>
+                    Descubre todos los detalles de la serie que la esta rompiendo.
+                </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="privacidad.html">
+              <h3>Que subes a redes sociales</h3>
+              <img src="img/tendencias-redes-sociales-2021-1280x720.jpg" class="rounded" width="100%">
+            </a>
+            <p>
+                Una problemática que será abordada a continuación por el profesional 
+                y que plantea de qué forma se puede solucionar, de modo que este caso 
+                hipotético mencionado no te ocurra a futuro y en otro escenario de la vida.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="Musica.html">
+              <h3>Grammy 2021</h3>
+              <img src="imagen/DuaLipa.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Estos son los ganadores que hicieron historia en los 
+                premios Grammy Awards 2021 en su 63ª entrega.
+            </p>
+        </div>
+
+        <div>
+            <a href="Peliculas.html">
+                <h2 class="centrado">Conoce las mejores peliculas de Terror.</h2>
+                <img src="imagen/TerrorEntrada.jpg"  class="mx-auto d-block" width="1100" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="camila.html">
+              <h3>Camila Gallardo</h3>
+              <img src="Img/camila.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Otra vez en el blanco de las críticas: 
+                Camila Gallardo indigna a las redes sociales 
+                por asistir a fiesta masiva en Miami.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="mountain.html">
+              <h3>Mountain Bike</h3>
+              <img src="Img/mountain-biking-95032_1280.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Martín Vidaurre tiene 20 años y cinco meses y es el más joven entre los 
+                15 nacionales que ya tienen los pasajes asegurados a los Juegos Olímpicos 
+                de Tokio. Hoy lunes 27 de julio, el ciclista debería haber participado del 
+                cross country en Tokio 2020, un debut que deberá esperar 12 meses.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="Coronavirus.html">
+              <h3>Coronavirus</h3>
+              <img src="imagen/EnfeCoronavirus.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Ultimas Informaciones sobre el Coronavirus en Chile.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="AlcoholDrogas.html">
+              <h3>Consumo alcohol y drogas</h3>
+              <img src="imagen/AlcoholEntrada.png" class="rounded" width="90%">
+            </a>
+            <p>
+                Impacto por el consumo de estas sustancias y como afecta en las salud.
+            </p>
+        </div>
+        
+        <div class="col-sm-4">
+            <a href="esqui.html">
+              <h3>Esqui</h3>
+              <img src="Img/esqui3.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                El esquí es un deporte de montaña que consiste en
+                el deslizamiento por la nieve. Existen lugares con glaciares como Tignes en Francia, 
+                donde la temporada anual para la práctica de este deporte empieza allá por finales
+                del mes de octubre.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="Mental.html">
+              <h3>Cuida tu Salud Mental</h3>
+              <img src="imagen/SaludMental.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Recomendaciones para mantener una buena salud mental.
+            </p>
+        </div>
+    </div>
+        
 
 </body>
 </html>
