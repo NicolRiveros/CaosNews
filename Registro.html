@@ -49,24 +49,32 @@
             <a href="InicioSesion.html"><button type="button" class="btn btn-light">Iniciar sesión</button></a>
         </div>
     </nav>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="cord">
-                    <form onsubmit="event.preventDefault()" class="box">
-                        <h1>Iniciar Sesión</h1>
-                        <p class="text-muted"> Ingrese su correo electronico y contraseña </p> <input type="text" name="" placeholder="Correo electronico"> 
-                        <input type="password" name="" placeholder="Contraseña"> <a class="forgot text-muted" href="#">
-                            ¿Haz olvidado tu contraseña?
-                            <p> </p>
-                            <a href="Registro.html"> Crear Cuenta </a>
-                        </a> 
-                        <input type="submit" name="" value="Ingresar" href="#">
-                    </form>
-                </div>
+
+    <div class="registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
             </div>
-        </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="password" placeholder="Correo electronico">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="email" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="phone-number" placeholder="Nueva Contraseña">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-block create-account">Crear Cuenta</button>
+            </div>
+        </form>
+
+    </div>
+
+
     </div>
 
 </body>
