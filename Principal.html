@@ -234,13 +234,15 @@
         <button id="btn1" class="btn btn-primary">Ver Mas Noticias</button>
       </div>
       <div>
-        <table class="table">
+        <table class="table" id="datos">
           <thead>
             <tr>
               <th>ID</th>
               <th>Titulo</th>
               <th>Descripcion</th>
+              <th>Imagen</th>
               <th>url</th>
+
             </tr>
           </thead>
         </table>
@@ -248,12 +250,6 @@
  
     </div>
 
-    <div class="row">
-        <button id="btn1" class="btn btn-primary">Ver Mas Noticias</button>
-    </div>
-    <div>
-
-    </div>
 
     <div class="container mt-5">
       <div class="text-center mb-3">
@@ -287,7 +283,17 @@
 <script>
   $(document).ready(function(){
     $("#btn1").click(function(){
-      $.get("https://api.spaceflightnewsapi.net/v3/articles")
+      $.get("https://api.spaceflightnewsapi.net/v3/articles"),
+      function(data){
+        $.each(data.articles,function(i,item){
+
+          $("#datos").append(
+
+            "<tr><td>" + item.id + "</td><td>" + item.title + "</td><td>" + item.summary + "</td><td>" + item.
+          );
+        
+        });      
+      };
     });
   });
 
