@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+ 
   <title>Noticias Caos News</title>
-  <link type="text/css" rel="stylesheet" href="css1/estilos.css">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!--BARRA DE COLOR NEGRO CON LETRAS BLANCAS-->
@@ -116,7 +114,8 @@
         
     </div>
     <p> </p>
-    <h1 class="centrado"> Noticias </h1>
+  
+    <h1 class="text-center"> Noticias </h1>
     <p> </p>
     <div class="container">
         <div class="row">
@@ -231,74 +230,103 @@
 
     <div class="container">
       <div class="row">
-        <button id="btn1" class="btn btn-primary">Ver Mas Noticias</button>
+          <h1>Clima</h1>
       </div>
-      <div>
-        <table class="table" id="datos">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Titulo</th>
-              <th>Descripcion</th>
-              <th>Imagen</th>
-              <th>url</th>
+      <div class="row">
+          <button id="boton1"></button>
+      </div>
+      <div class="row">
+          <span id="longitud"></span>
+          <span id="latitud"></span>
+      </div>
 
-            </tr>
-          </thead>
-        </table>
-      </div>  
- 
+      <div class="row">
+          <table class="table" id="tabla1">
+              <tr>
+                  <td>Clima</td>
+                  <td>temp min</td>
+                  <td>temp máx</td>
+                  <td>te</td>
+              </tr>
+
+          </table>
+      </div>
     </div>
 
-
-    <div class="container mt-5">
-      <div class="text-center mb-3">
-      </div>
-      <div class="row g-2">
-          <div class="col-md-4">
-              <div class="card"> <img src="https://i.imgur.com/xuGJbnU.png" width="40">
-                  <h5>Atención</h5>
-                  <p>Lunes a Sabados de 09:00 a 22:00 hrs</p>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card"> <img src="https://i.imgur.com/TNKflal.png" width="40">
-                  <h5>Email</h5>
-                  <p>caosnews_contacto@mail.com</p>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card"> <img src="https://i.imgur.com/pZLFSO3.png" width="40">
-                  <h5>Comunicate con nosotros</h5>
-                  <p>9-12345678</p>
-              </div>
-          </div>
-      </div>
+      <div class="container mt-5">
+        <div class="text-center mb-3">
+        </div>
+        <div class="row g-2">
+            <div class="col-md-4">
+                <div class="card"> <img src="https://i.imgur.com/xuGJbnU.png" width="40">
+                    <h5>Atención</h5>
+                    <p>Lunes a Sabados de 09:00 a 22:00 hrs</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card"> <img src="https://i.imgur.com/TNKflal.png" width="40">
+                    <h5>Email</h5>
+                    <p>caosnews_contacto@mail.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card"> <img src="https://i.imgur.com/pZLFSO3.png" width="40">
+                    <h5>Comunicate con nosotros</h5>
+                    <p>9-12345678</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
   </div>
+</body>
 
-<script src="code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
 
 <script>
-  $(document).ready(function(){
-    $("#btn1").click(function(){
-      $.get("https://api.spaceflightnewsapi.net/v3/articles"),
-      function(data){
-        $.each(data.articles,function(i,item){
+    $(document).ready(function(){
+        $("#boton1").show(
+            function()
+            {
+                getLocation();
+            }
+        );
 
-          $("#datos").append(
-
-            "<tr><td>" + item.id + "</td><td>" + item.title + "</td><td>" + item.summary + "</td><td>" + item.
-          );
-        
-        });      
-      };
     });
-  });
 
+    function getLocation(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }else{
+                x.innerHTML = "Geolocalizacion no es soportada por este navegador";
+            }
+        }
+
+
+    function showPosition(position) {
+  
+  $("#longitud").html("Longitud: " + position.coords.longitude).hide();
+  $("#latitud").html("Latitud: " + position.coords.latitude).hide();
+
+  $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
+          function(data){
+
+              $("#tabla1").append("<tr><td>"+ data.name +"</td><td>"+data.main.temp_min+"</td><td>"+ data.main.temp_max + 
+                "</td><td>"+ "<img src='" + data.main + "'>"  + "</td></tr>");
+              
+          });
+
+  
+
+
+}
 </script>
-
-
-</body>
 </html>
