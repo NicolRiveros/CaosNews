@@ -22,6 +22,20 @@ error: function (jqXHR, textStatus, errorThrown) {
 alert(errorThrown);
 }
 });
+
+
+
+$.ajax({
+type: "GET",
+url: "https://api.spaceflightnewsapi.net/v3/articles",
+dataType: "json",
+success: function (data2) {
+
+},
+error: function (jqXHR, textStatus, errorThrown) {
+alert(errorThrown);
+}
+});
 </script>
 
 </body>
@@ -291,7 +305,7 @@ alert(errorThrown);
         <div class="row">
             <table class="table" id="tabla2">
                 <tr>
-                    <td>Titulp</td>
+                    <td>Titulo</td>
                     <td>Descripcion</td>
                     <td>Link</td>
                     <td>Imagen</td>
@@ -399,9 +413,10 @@ alert(errorThrown);
     $.get("https://api.spaceflightnewsapi.net/v3/articles",
           function(data2){
 
-              $("#tabla2").append("<tr><td>"+ data2.title +"</td><td>"+data2.summary+"</td><td>"+ data2.url + 
+                $("#tabla2").append("<tr><td>"+ data2.title +"</td><td>"+data2.summary+"</td><td>"+ data2.url + 
                 "</td><td>" + "<img src= '" + data2.imageUrl + "'>"  + "</td></tr>");
-              
+
+
           });
 
   
