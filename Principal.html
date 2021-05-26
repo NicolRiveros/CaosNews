@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+<script>
+var vars;
+var temp_c;
+var temp_f;
+
+$.ajax({
+type: "GET",
+url: "http://api.openweathermap.org/data/2.5/weather?q=Santiago,CL&APPID=4b523d09bbd263ca789ce23a13cb8daa",
+dataType: "json",
+success: function (data) {
+vars = data.main;
+temp_c = vars.temp - 273.15;
+temp_f = 1.8 * (vars.temp - 273.15) + 32;
+},
+error: function (jqXHR, textStatus, errorThrown) {
+alert(errorThrown);
+}
+});
+</script>
+
+</body>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -48,6 +75,31 @@
             <a href="InicioSesion.html"><button type="button" class="btn btn-light">Iniciar sesión</button></a>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <h1>Clima</h1>
+        </div>
+        <div class="row">
+            <button id="boton1"></button>
+        </div>
+        <div class="row">
+            <span id="longitud"></span>
+            <span id="latitud"></span>
+        </div>
+  
+        <div class="row">
+            <table class="table" id="tabla1">
+                <tr>
+                    <td>Clima</td>
+                    <td>temp min</td>
+                    <td>temp máx</td>
+                    <td>Estado</td>
+                </tr>
+  
+            </table>
+        </div>
+      </div>
 
     <div class="container mt-3">
 
@@ -228,30 +280,27 @@
         </div>
     </div>
 
+
     <div class="container">
-      <div class="row">
-          <h1>Clima</h1>
-      </div>
-      <div class="row">
-          <button id="boton1"></button>
-      </div>
-      <div class="row">
-          <span id="longitud"></span>
-          <span id="latitud"></span>
+        <div class="row">
+            <h1 class="centrado">Mas Noticias</h1>
+        </div>
+        <div class="row">
+            <button id="boton2">Mas Noticias</button>
+        </div>  
+        <div class="row">
+            <table class="table" id="tabla2">
+                <tr>
+                    <td>Clima</td>
+                    <td>temp min</td>
+                    <td>temp máx</td>
+                    <td>Estado</td>
+                </tr>
+  
+            </table>
+        </div>
       </div>
 
-      <div class="row">
-          <table class="table" id="tabla1">
-              <tr>
-                  <td>Clima</td>
-                  <td>temp min</td>
-                  <td>temp máx</td>
-                  <td>te</td>
-              </tr>
-
-          </table>
-      </div>
-    </div>
 
       <div class="container mt-5">
         <div class="text-center mb-3">
@@ -313,14 +362,45 @@
 
     function showPosition(position) {
   
-  $("#longitud").html("Longitud: " + position.coords.longitude).hide();
-  $("#latitud").html("Latitud: " + position.coords.latitude).hide();
+    $("#longitud").html("Longitud: " + position.coords.longitude).hide();
+    $("#latitud").html("Latitud: " + position.coords.latitude).hide();
 
-  $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
+    $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
           function(data){
 
               $("#tabla1").append("<tr><td>"+ data.name +"</td><td>"+data.main.temp_min+"</td><td>"+ data.main.temp_max + 
-                "</td><td>"+ "<img src='" + data.main + "'>"  + "</td></tr>");
+                "</td><td>" + "<img src= '" + data.icon + "'>"  + "</td></tr>");
+              
+          });
+
+  
+
+
+}
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#boton2").click(
+            function()
+            {
+                showPosition2();
+            }
+        );
+
+    });
+
+
+    function showPosition2(position) {
+  
+
+    $.get("https://api.spaceflightnewsapi.net/v3/articles",
+          function(data2){
+
+              $("#tabla2").append("<tr><td>"+ data2.title +"</td><td>"+data2.summary+"</td><td>"+ data2.url + 
+                "</td><td>" + "<img src= '" + data2.imageUrl + "'>"  + "</td></tr>");
               
           });
 
