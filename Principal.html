@@ -272,7 +272,9 @@
                         <th>ID</th>
                         <th>Titúlo</th>
                         <th>Descripción</th>
-                        <th>Imagen</th>
+                        <th>Sitio</th>
+                        <th>Url</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -363,30 +365,16 @@
                 $.each(data, function(i,item){
                     $("#tablaNoticias").append(
                     "<tr>" +
-                    "<td>" + data.id + "</td>" +
-                    "<td>" + data.title + "</td>" +
-                    "<td>" + data.summary + "</td>" +
-                    "<td>" + data.url + "</td>" +
+                    "<td>" + data[i].id + "</td>" +
+                    "<td>" + data[i].title + "</td>" +
+                    "<td>" + data[i].summary + "</td>" +
+                    "<td>" + data[i].newsSite + "</td>" +
+                    "<td>" + data[i].url + "</td>" +
+                    "<td>" + data[i].publishedAt + "</td>" +
                     "</tr>"); 
                 })         
                 });
             });
-
-
-    //$("#tablaNoticias").append("<tr>" +
-                    //"<td>" + data.id + "</td>" +
-                    //"<td>" + data.title + "</td>" +
-                    //"<td>" + data.summary + "</td>" +
-                    //"<td>" + data.url + "</td>" +
-                    //"</tr>")
-
-                    //$.each(data.articles, function(i, item){
-                    //$("#tablaNoticias").append("<tr>" +
-                    //    "<td>" + data.id + "</td>" +
-                    //    "<td>" + data.title + "</td>" +
-                    //    "<td>" + data.summary + "</td>" +
-                    //    "<td>" + data.url + "</td>" +
-                    //    "</tr>")
 </script>
 
 </html>
