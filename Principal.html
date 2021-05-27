@@ -357,20 +357,21 @@
 </script>
 
 <script>
-    $(document).ready(function(){
         $("#boton2").click(function(){
-            $.get("https://api.spaceflightnewsapi.net/v3/articles?_limit-3",
+            $.get("https://api.spaceflightnewsapi.net/v3/articles",
             function(data){
-                    $("#tablaNoticias").append("<tr>" +
+                $.each(data, function(i,item){
+                    $("#tablaNoticias").append(
+                    "<tr>" +
                     "<td>" + data.id + "</td>" +
                     "<td>" + data.title + "</td>" +
                     "<td>" + data.summary + "</td>" +
                     "<td>" + data.url + "</td>" +
-                    "</tr>");          
+                    "</tr>"); 
+                })         
                 });
             });
 
-});
 
     //$("#tablaNoticias").append("<tr>" +
                     //"<td>" + data.id + "</td>" +
