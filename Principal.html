@@ -64,13 +64,13 @@
                 <span id="latitud"></span>
             </div>
 
-            <div class="container" style="background: rgb(245, 240, 240);">
+            <div class="container" >
                 <div class="row">
                     <table class="table" id="tabla1">
                         <tr>
-                            <th> <b>Temperatura min</b> </th>
-                            <th> <b>Temperatura máx</b> </th>
-                            <th> <b>Clima</b> </th>
+                            <th>Temperatura min </th>
+                            <th>Temperatura máx </th>
+                            <th>Clima</th>
                         </tr>
           
                     </table>
@@ -255,29 +255,32 @@
         </div>
     </div>
 
-
     <div class="container">
         <div class="row">
-            <h1 class="centrado">Mas Noticias</h1>
+            <h2 style="text-align: center;">Más Noticias</h2>
         </div>
         <div class="row">
-            <button id="boton2">Mas Noticias</button>
-        </div>  
-        <div class="row">
-            <table class="table" id="tabla2">
-                <tr>
-                    <td>Titulo</td>
-                    <td>Descripcion</td>
-                    <td>Link</td>
-                    <td>Imagen</td>
-                </tr>
-  
+            <button id="boton2" class="btn btn-primary">Ver Noticias Espaciales</button>
+        </div>
+        <div>
+            <table class="table" id="tablaNoticias">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titúlo</th>
+                        <th>Descripción</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
             </table>
         </div>
-      </div>
 
+    </div>
 
-      <div class="container mt-5">
+    <div class="container mt-5">
         <div class="text-center mb-3">
         </div>
         <div class="row g-2">
@@ -299,7 +302,6 @@
                     <p>9-12345678</p>
                 </div>
             </div>
-            <img src="img/Logo.jpg" id="myimagen" alt="Logo" style="width: 50px;">
         </div>
     </div>
   </div>
@@ -350,28 +352,42 @@
 
 <script>
     $(document).ready(function(){
-        $("#boton2").click(
-            function()
-            {
-                showPosition2();
-            }
-        );
+        $("#boton2").click(function(){
+            $.get("https://api.spaceflightnewsapi.net/v3/articles",
+            function(data){
+                $.each(data.articles, function(i, item){ //ITERA POR CADA ELEMENTO
+                    $("#tablaNoticias").append( //AGREGA LOS ELEMENTOS A LA TABLA 
+                        "<tr>" +
+                            "<td>" + item.id + "</td>" +
+                            "<td>" + item.title + "</td>" +
+                            "<td>" + item.url + "</td>" +
+                            "<td>" + "<img src='" + item.imageUrl + "'>" + "</td>" +
+                            "<td>" + item.newsSite + "</td>" +
+                            "<td>" + item.summary + "</td>" +
+                            "<td>" + item.publishedAt + "</td>" +
+                            "<td>" + item.updatedAt + "</td>" +
+                        "</tr>"
+                    );
+                });
+            });
 
+        });
     });
 
+    //$("#tablaNoticias").append("<tr>" +
+                    //"<td>" + data.id + "</td>" +
+                    //"<td>" + data.title + "</td>" +
+                    //"<td>" + data.summary + "</td>" +
+                    //"<td>" + data.url + "</td>" +
+                    //"</tr>")
 
-    function showPosition2(position) {
-  
-
-    $.get("https://api.spaceflightnewsapi.net/v3/articles",
-          function(data2){
-
-                $("#tabla2").append("<tr><td>"+ data2.title +"</td><td>"+data2.summary+"</td><td>"+ data2.url + 
-                "</td><td>" + "<img src= '" + data2.imageUrl + "'>"  + "</td></tr>");
-
-
-          });
-}
+                    //$.each(data.articles, function(i, item){
+                    //$("#tablaNoticias").append("<tr>" +
+                    //    "<td>" + data.id + "</td>" +
+                    //    "<td>" + data.title + "</td>" +
+                    //    "<td>" + data.summary + "</td>" +
+                    //    "<td>" + data.url + "</td>" +
+                    //    "</tr>")
 </script>
 
 </html>
