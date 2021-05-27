@@ -344,8 +344,8 @@
   "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
 
           function(data){
-              $("#tabla1").append("<tr><td>" + "<img src='https://assets.msn.com/bundles/v1/weather/latest/SunnyDayV3.svg'>" + data.main.temp 
-                +"</td><td>" + data.main.temp_max +"</td><td>" + data.main.temp_min +  "</td></tr>");
+              $("#tabla1").append("<tr><td>" + "<img src='https://assets.msn.com/bundles/v1/weather/latest/SunnyDayV3.svg'>" + data.main.temp
+                +"</td><td>" + data.main.temp_max + "<br>°C" + "</td><td>" + data.main.temp_min+ "<br>°C" + "</td></tr>");
             }); 
 }
             //"</td><td>" + data.name
