@@ -1,57 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-</head>
-<body>
-<script>
-var vars;
-var temp_c;
-var temp_f;
-
-$.ajax({
-type: "GET",
-url: "http://api.openweathermap.org/data/2.5/weather?q=Santiago,CL&APPID=4b523d09bbd263ca789ce23a13cb8daa",
-dataType: "json",
-success: function (data) {
-vars = data.main;
-temp_c = vars.temp - 273.15;
-temp_f = 1.8 * (vars.temp - 273.15) + 32;
-},
-error: function (jqXHR, textStatus, errorThrown) {
-alert(errorThrown);
-}
-});
-
-
-
-$.ajax({
-type: "GET",
-url: "https://api.spaceflightnewsapi.net/v3/articles",
-dataType: "json",
-success: function (data2) {
-
-},
-error: function (jqXHR, textStatus, errorThrown) {
-alert(errorThrown);
-}
-});
-</script>
-
-</body>
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
  
   <title>Noticias Caos News</title>
 
 </head>
 <body>
+    
 <!--BARRA DE COLOR NEGRO CON LETRAS BLANCAS-->
     <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top">
         <!--PONER EL LOGO EN EL MENU       navbar navbar-expand-lg navbar-light fixed-top py-3-->
@@ -90,34 +51,34 @@ alert(errorThrown);
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <h1>Clima</h1>
-        </div>
-        <div class="row">
-            <button id="boton1"></button>
-        </div>
-        <div class="row">
-            <span id="longitud"></span>
-            <span id="latitud"></span>
-        </div>
-  
-        <div class="row">
-            <table class="table" id="tabla1">
-                <tr>
-                    <td>Clima</td>
-                    <td>temp min</td>
-                    <td>temp máx</td>
-                    <td>Estado</td>
-                </tr>
-  
-            </table>
-        </div>
-      </div>
-
     <div class="container mt-3">
+        <div class="container">
+            <div class="row">
+                <h1>Clima</h1>
+            </div>
+            <div class="row">
+                <button id="boton1"></button>
+            </div>
+            <div class="row">
+                <span id="longitud"></span>
+                <span id="latitud"></span>
+            </div>
 
-        <h2>Carousel</h2>
+            <div class="container" style="background: rgb(245, 240, 240);">
+                <div class="row">
+                    <table class="table" id="tabla1">
+                        <tr>
+                            <th> <b>Temperatura min</b> </th>
+                            <th> <b>Temperatura máx</b> </th>
+                            <th> <b>Clima</b> </th>
+                        </tr>
+          
+                    </table>
+                </div>
+            </div>
+
+          </div>
+          
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
         
           <!-- Indicadores -->
@@ -220,7 +181,7 @@ alert(errorThrown);
 
         <div>
             <a href="Peliculas.html">
-                <h2 class="centrado">Conoce las mejores peliculas de Terror.</h2>
+                <h2 class="text-center">Conoce las mejores peliculas de Terror.</h2>
                 <img src="imagen/TerrorEntrada.jpg"  class="mx-auto d-block" width="1100" alt="">
             </a>
         </div>
@@ -338,9 +299,9 @@ alert(errorThrown);
                     <p>9-12345678</p>
                 </div>
             </div>
+            <img src="img/Logo.jpg" id="myimagen" alt="Logo" style="width: 50px;">
         </div>
     </div>
-    
   </div>
 </body>
 
@@ -351,8 +312,6 @@ alert(errorThrown);
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
-
 
 <script>
     $(document).ready(function(){
@@ -373,27 +332,21 @@ alert(errorThrown);
             }
         }
 
-
     function showPosition(position) {
   
-    $("#longitud").html("Longitud: " + position.coords.longitude).hide();
-    $("#latitud").html("Latitud: " + position.coords.latitude).hide();
+  $("#longitud").html("Longitud: " + position.coords.longitude).hide();
+  $("#latitud").html("Latitud: " + position.coords.latitude).hide();
+  $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + 
+  "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
 
-    $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
           function(data){
-
-              $("#tabla1").append("<tr><td>"+ data.name +"</td><td>"+data.main.temp_min+"</td><td>"+ data.main.temp_max + 
-                "</td><td>" + "<img src= '" + data.icon + "'>"  + "</td></tr>");
-              
-          });
-
-  
-
-
+              $("#tabla1").append("<tr><td>" + data.main.temp_min +
+                "</td><td>" + data.main.temp_max + "</td><td>" + data.weather.main +  "</td><td>" +
+                "<img src='http://openweathermap.org/img/wn/01d@2x.png'>" + "</td></tr>");
+            });
 }
+
 </script>
-
-
 
 <script>
     $(document).ready(function(){
@@ -418,10 +371,7 @@ alert(errorThrown);
 
 
           });
-
-  
-
-
 }
 </script>
+
 </html>
